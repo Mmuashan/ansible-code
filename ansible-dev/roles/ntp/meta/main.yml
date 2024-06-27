@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: ntp
   namespace: ansible
-  author: Matthew DePorter
+  author: Marius
   description: Role to install and configure ntp
   company: Mobile-Tech LLC
 

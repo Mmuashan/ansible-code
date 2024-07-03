@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh 'curl -uadmin:AP23ECGyQnBamq6ENNe8okFtEr2 -T \
                 ansible-${BUILD_ID}.zip \
-                "http://35.153.57.235:8081/artifactory/ansible/ansible-${BUILD_ID}.zip"'
+                "http://52.2.42.75:8081/artifactory/ansible/ansible-${BUILD_ID}.zip"'
             }
         } 
         stage('publish to ansible server'){

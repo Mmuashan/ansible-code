@@ -27,7 +27,7 @@
          state: touch  
 
      - name: Start and enable Daemon
-       system: 
+        
           name: docker
           state: started
           enabled: yes     

@@ -12,18 +12,18 @@ pipeline{
             steps{
                 sh 'curl -uadmin:AP23ECGyQnBamq6ENNe8okFtEr2 -T \
                 ansible-${BUILD_ID}.zip \
-                "http://52.2.42.75:8081/artifactory/ansible/ansible-${BUILD_ID}.zip"'
+                "http://18.206.233.64:8081/artifactory/ansible/ansible-${BUILD_ID}.zip"'
             }
         } 
         stage('publish to ansible server'){
             steps{
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible-server', \
-                transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'unzip -o ansible-${BUILD_ID}.zip; rm -rf ansible-${BUILD_ID}.zip ', \
-                execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, \
-                patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, \
-                removePrefix: '', sourceFiles: 'ansible-${BUILD_ID}.zip')], usePromotionTimestamp: false, \
-                useWorkspaceInPromotion: false, verbose: false)])
-            }
-        }  
-    }
+               sshPublisher(publishers: [sshPublisherDesc(configName: 'ansibleServer', \
+               transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'unzip -o ansible-${BUILD_ID}.zip; rm -rf ansible-${BUILD_ID}.zip ', \
+               execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, \
+               patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, \
+               removePrefix: '', sourceFiles: 'ansible-${BUILD_ID}.zip')], usePromotionTimestamp: false, \
+               useWorkspaceInPromotion: false, verbose: false)])
+           }
+        }
+    }  
 }

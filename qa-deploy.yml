@@ -9,7 +9,7 @@
         path: /opt/qa/spg/*.jar
         state: absent
 
-    - name: Get the PID
+    - name: Get the PI
       shell: lsof -i :8082
       register: pid_output
 

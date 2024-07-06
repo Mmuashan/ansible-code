@@ -30,13 +30,4 @@
        systemd:  
           name: docker
           state: started
-          enabled: yes  
-
-     - name: Setup QA environment on ansible-dev
-       hosts: ansible-dev
-       tasks:
-    - name: Update system
-      apt:
-        update_cache: yes
-    - name: Setup application environment
-      command: /path/to/setup/script.sh     
+          enabled: yes     

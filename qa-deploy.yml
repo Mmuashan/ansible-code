@@ -26,18 +26,3 @@
 
     - name: Run the App
       shell:  nohup java -jar /opt/qa/spg/*.jar > /opt/qa/spg.log 2>&1 &
-
-    - name: Deploy application to ansible-dev
-      hosts: ansible-dev
-      tasks:
-    - name: Copy application files
-      copy:
-        src: /local/path/to/application/
-        dest: /remote/path/to/application/
-    - name: Install dependencies
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - dependency1
-        - dependency2

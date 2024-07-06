@@ -20,7 +20,7 @@ pipeline{
                sshPublisher(publishers: [sshPublisherDesc(configName: 'ansibleServer', \
                transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'unzip -o ansible-${BUILD_ID}.zip; rm -rf ansible-${BUILD_ID}.zip ', \
                execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, \
-               patternSeparator: '[, ]+', remoteDirectory: '/home/ec2-user/ansible-dev', remoteDirectorySDF: false, \
+               patternSeparator: '[, ]+', remoteDirectory: '~/ansible-dev', remoteDirectorySDF: false, \
                removePrefix: '', sourceFiles: 'ansible-${BUILD_ID}.zip')], usePromotionTimestamp: false, \
                useWorkspaceInPromotion: false, verbose: false)])
            }

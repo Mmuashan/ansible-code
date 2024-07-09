@@ -2,7 +2,7 @@
 - hosts: ws
   become: yes
   become_user: root
-  ignore_erros: yes
+  ignore_errors: yes
   tasks: 
      - name: Install Packages
        yum:
